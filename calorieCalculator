@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("Podaj swoje imie: ");
+    String name = scanner.nextLine();
+
+    System.out.println("Podaj swoj wiek: ");
+    Integer age = scanner.nextInt();
+    
+    System.out.println("Podaj swoja wage (w kg): ");
+    Integer weight = scanner.nextInt();
+    
+    System.out.println("Podaj swoj wzrost (w cm)" );
+    Integer height = scanner.nextInt();
+    
+    System.out.println("Podaj swoja ples (k/m): ");
+    String gender = scanner.next();
+    
+    System.out.println("czesc " + name + ", twoje dane: wrzost " + height + ", " + age + ", " + weight + ", " + gender);
+    
+    Float dailyCalories;
+    if(gender.equals("k")){
+        dailyCalories = 655 + (9.6f * weight) + (1.8f * height) - (4.7f * age);
+    } else {
+        dailyCalories = 66f + (13.7f * weight) + (5f*height) - (6.8f*age);
+    }
+    
+    System.out.println(name + ", twoje dzienne zapotrzebowanie na kalorei to: " + dailyCalories + " kalorii");
+    
+  }
+}
